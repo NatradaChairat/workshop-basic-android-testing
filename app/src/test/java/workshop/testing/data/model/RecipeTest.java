@@ -14,7 +14,11 @@ public class RecipeTest {
         //Call Recipe class to read the file
         Recipe recipe = Recipe.readFromStream(inputStream);
 
+
         assertNotNull(recipe);
+        assertEquals("water", recipe.id);
+        assertEquals("Water", recipe.title);
+        assertEquals("Put glass under tap. Open tap. Close tap. Drink.", recipe.description);
 
     }
 
