@@ -2,11 +2,17 @@ package workshop.testing.data.model;
 
 import org.junit.Test;
 
+import java.io.IOException;
 import java.io.InputStream;
 
 import static org.junit.Assert.*;
 
 public class RecipeTest {
+    @Test
+    public void test_ioexception(){
+
+    }
+
     @Test
     public void i_can_read_data_from_water(){
         //Call file
