@@ -17,19 +17,22 @@ public class RecipeStore {
     private final Map<String, Recipe> map = new HashMap<>();
 
     public RecipeStore(Context context, String directory) {
-        // TODO:: for your homework -> Read all file from assets/recipes directory
 
-        // Demo in workshop :: Ugly code !!
-        File file1 = new File(directory, "chocolate_pudding.txt");
-        InputStream stream1 = null;
-        try {
-            stream1 = context.getAssets().open(file1.getPath());
-            Recipe recipe = Recipe.readFromStream(stream1);
-            recipes.add(recipe);
-            map.put(recipe.id, recipe);
-        } catch (IOException e) {
-            e.printStackTrace();
+        //Homework: can call every file in assets/recipes folder
+        String[] recipeName  = {"chocolate_pudding.txt","creamed_carrots.txt", "deviled_eggs.txt", "fried_tomatoes.txt"};
+        for(int i =0; i<= recipeName.length-1 ; i++ ){
+            File file1 = new File(directory, ""+recipeName[i]);
+            InputStream stream1 = null;
+            try {
+                stream1 = context.getAssets().open(file1.getPath());
+                Recipe recipe = Recipe.readFromStream(stream1);
+                recipes.add(recipe);
+                map.put(recipe.id, recipe);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
     public Recipe getRecipe(String id) {
