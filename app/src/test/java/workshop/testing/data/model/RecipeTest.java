@@ -9,8 +9,14 @@ import static org.junit.Assert.*;
 
 public class RecipeTest {
     @Test
-    public void test_ioexception(){
+    public void test_ioexception() throws IOException{
+        InputStream inputStream = RecipeTest.class.getResourceAsStream("/recipes/water.txt");
+        inputStream.close();
+        //Call Recipe class to read the file
+        Recipe recipe = Recipe.readFromStream(inputStream);
 
+
+        assertNull(recipe);
     }
 
     @Test
