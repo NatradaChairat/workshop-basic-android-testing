@@ -22,4 +22,22 @@ public class RecipeTest {
 
     }
 
+    @Test
+    public void i_can_read_data_from_noId(){
+        //Call file
+        InputStream inputStream = RecipeTest.class.getResourceAsStream("/recipes/no_id.txt");
+        //Call Recipe class to read the file
+        Recipe recipe = Recipe.readFromStream(inputStream);
+
+
+        assertNotNull(recipe);
+        assertEquals(null, recipe.id);
+        assertEquals("Water", recipe.title);
+        assertEquals("Put glass under tap. Open tap. Close tap. Drink.", recipe.description);
+
+    }
+
+
+
+
 }
