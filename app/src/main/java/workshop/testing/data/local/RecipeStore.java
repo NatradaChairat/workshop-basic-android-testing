@@ -19,9 +19,9 @@ public class RecipeStore {
     public RecipeStore(Context context, String directory) {
 
         //Homework: can call every file in assets/recipes folder
-        String[] recipeName  = {"chocolate_pudding.txt","creamed_carrots.txt", "deviled_eggs.txt", "fried_tomatoes.txt"};
+        String[] recipeName  = {"chocolate_pudding","creamed_carrots", "deviled_eggs", "fried_tomatoes", "blueberry_muffin"};
         for(int i =0; i<= recipeName.length-1 ; i++ ){
-            File file1 = new File(directory, ""+recipeName[i]);
+            File file1 = new File(directory, ""+recipeName[i]+".txt");
             InputStream stream1 = null;
             try {
                 stream1 = context.getAssets().open(file1.getPath());

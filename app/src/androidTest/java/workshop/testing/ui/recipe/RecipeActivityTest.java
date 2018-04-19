@@ -46,4 +46,56 @@ public class RecipeActivityTest {
                 "\n" +
                 "Cook until it thickens, beat whites of eggs and put on top, put in oven to brown. Serve with cream, if preferred.")));*/
     }
+
+    @Test
+    public void show_chocolate_pudding(){
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID,"chocolate_pudding");
+        activity.launchActivity(intent);
+
+        onView(withId(R.id.title)).check(matches(withText("Chocolate Pudding")));
+
+    }
+
+
+    @Test
+    public void show_creamed_carrots(){
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID,"creamed_carrots");
+        activity.launchActivity(intent);
+
+        onView(withId(R.id.title)).check(matches(withText("Creamed Carrots")));
+
+    }
+
+    @Test
+    public void show_deviled_eggs(){
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID,"deviled_eggs");
+        activity.launchActivity(intent);
+
+        onView(withId(R.id.title)).check(matches(withText("Deviled Eggs")));
+
+    }
+
+    @Test
+    public void show_fried_tomatoes(){
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID,"fried_tomatoes");
+        activity.launchActivity(intent);
+
+        onView(withId(R.id.title)).check(matches(withText("Fried Tomatoes")));
+
+    }
+
+
+    @Test
+    public void show_blueberry_muffin(){
+        Intent intent = new Intent();
+        intent.putExtra(RecipeActivity.KEY_ID,"blueberry_muffin");
+        activity.launchActivity(intent);
+
+        onView(withId(R.id.title)).check(matches(withText("Blueberry Muffin")));
+
+    }
 }

@@ -15,7 +15,6 @@ public class RecipeTest {
         //Call Recipe class to read the file
         Recipe recipe = Recipe.readFromStream(inputStream);
 
-
         assertNull(recipe);
     }
 
@@ -69,6 +68,7 @@ public class RecipeTest {
                 "Mix all together and strain. Add large piece of ice.", recipe.description);
 
     }
+
 
 
 
